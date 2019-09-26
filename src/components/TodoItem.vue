@@ -14,14 +14,8 @@ export default {
   props: ["todo"],
   methods: {
     onChange() {
-      this.markComplete();
-      this.emitChange();
-    },
-    emitChange() {
-      this.$emit("edit-todo", this.todo);
-    },
-    markComplete() {
       this.todo.completed = !this.todo.completed;
+      this.$emit("edit-todo", this.todo);
     }
   }
 };
